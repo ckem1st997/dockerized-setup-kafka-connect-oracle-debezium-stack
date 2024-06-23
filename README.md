@@ -1,3 +1,8 @@
+
+curl.exe -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" http://localhost:8083/connectors/ -d @create-customer-source-connector.json
+
+
+
 # Kafka Connect with Oracle Database Using Debezium
 
 > Note:
