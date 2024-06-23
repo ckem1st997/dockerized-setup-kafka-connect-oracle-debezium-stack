@@ -1,0 +1,30 @@
+{
+  "name": "oracle-customer-source-connector-00",
+  "config": {
+    "connector.class": "io.debezium.connector.oracle.OracleConnector",
+    "database.hostname": "192.168.3.184",
+    "database.port": "1521",
+    "database.user": "posnew",
+    "database.password": "posnew",
+    "database.server.name": "oracle",
+    "database.history.kafka.topic": "history",
+    "database.dbname": "sidhacom",
+
+    "database.history.kafka.bootstrap.servers": "kafka:9092",
+    "table.include.list": "POSNEW.TBL_CAT_SEGMENT1,POSNEW.TBL_CAT_SEGMENT2,POSNEW.TBL_CAT_SEGMENT3",
+    "database.schema": "POSNEW",
+    "database.pdb.name": "ORCLPDB1",
+    "snapshot.mode": "schema_only",
+    "include.schema.changes": "true",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schema.registry.url": "http://schema-registry:8081",
+    "value.converter.schema.registry.url": "http://schema-registry:8081",
+    "topic.prefix": "oracle-postgres-",
+    "schema.history.internal.kafka.topic": "schema-changes.oracle",
+    "schema.history.internal.kafka.bootstrap.servers": "kafka:9092",
+    "database.connection.adapter": "xstream",
+    "database.out.server.name": "postgres"
+  }
+}
+
